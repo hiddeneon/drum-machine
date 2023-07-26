@@ -1,38 +1,77 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  background-color: black;
+}
+
+#drum-machine {
+  width: 700px;
+  height: 350px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+}
+
+.drum-controls {
+  background-color:cadetblue;
+  width: 60%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px 0 0 10px;
+}
+
+/* HANDLE PAD BUTTONS */
+
+.drum-pad {
+  background-color: white;
+  color: grey;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 2rem;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px black;
+  user-select: none;
+}
+
+.drum-pad:hover {
+  cursor: pointer;
+  background-color: azure;
+}
+
+.drum-pad label {
+  cursor: pointer;
+}
+
+.drum-pad:active {
+  background-color: grey;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* DASHBOARD ELEMENT */
+.dashboard {
+  width: 40%;
+  height: 100%;
+  background-color: aliceblue;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#display {
+  min-width: 50%;
+  height: 40px;
+  border: dotted 4px grey;
+  margin-top: 20%;
 }
