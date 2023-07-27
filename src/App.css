@@ -7,12 +7,24 @@
   background-color: black;
 }
 
+.instrument-label {
+  color: white;
+  top: 50px;
+  font-size: 2rem;;
+  background-color: orangered;
+  border-radius: 15px 15px 0 0;
+  min-width: 300px;
+  text-align: center;
+  z-index: 1;
+}
+
 #drum-machine {
   width: 700px;
   height: 350px;
   background-color: white;
   border-radius: 10px;
   display: flex;
+  box-shadow: 0 0 15px aliceblue;
 }
 
 .drum-controls {
@@ -70,8 +82,23 @@
 }
 
 #display {
-  min-width: 50%;
-  height: 40px;
-  border: dotted 4px grey;
+  min-width: 60%;
+  height: 60px;
+  border: double 4px grey;
   margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-family: 'Lucida Sans', sans-serif;
+  font-weight: bold;
+  color:white;
+  background-color: grey;
+  border-radius: 2px;
+  box-shadow: 0 0 3px black;
+}
+
+.on-key-anim {
+  background-color: grey;
+  color: white;
 }
