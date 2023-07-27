@@ -1,6 +1,6 @@
 import React from "react";
 
-export function PlayButton({ letter, audioRef, handleClick, name, handleKey }) {
+export function PlayButton({ letter, audioRef, handleClick, name }) {
 
 
     let audio = new Audio(audioRef);
@@ -9,14 +9,14 @@ export function PlayButton({ letter, audioRef, handleClick, name, handleKey }) {
     handleClick(name);
     audio.play();
   }
+
     return (
         <div
         tabIndex={1}
         className="drum-pad"
         id={letter}
-        onKeyDown={handleKey}
         onClick={start}>
-            <label>{letter}</label>
+            <label>{letter.toUpperCase()}</label>
         </div>
     )
 }
