@@ -17,6 +17,7 @@ export function PlayButton({ letter, audioRef, handleClick, name }) {
         id={letter}
         onClick={start}>
             <label>{letter.toUpperCase()}</label>
+            {/*<audio class="clip" id={letter.toUpperCase()} src={audioRef} />*/}
         </div>
     )
 }

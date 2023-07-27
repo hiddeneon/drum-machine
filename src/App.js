@@ -13,7 +13,7 @@ import closedHH from './audio/Cev_H2.mp3';
 
 function App() {
 
-  const [sound, setSound] = useState("Neither");
+  const [sound, setSound] = useState("");
 
 
   const handleClick = (name) => {
@@ -49,18 +49,16 @@ function App() {
 
       setSound(buttons[event.key]);
 
-      document.getElementById(event.key).style.backgroundColor = 'grey';
-      document.getElementById(event.key).style.color = 'white';
-      
+      document.getElementById(event.key).classList.add("on-key-anim");
       setTimeout(() => {
-      document.getElementById(event.key).style.backgroundColor = 'white';
-      document.getElementById(event.key).style.color = 'grey';
+        document.getElementById(event.key).classList.remove("on-key-anim");
       }, 100);
-  }
+    }
 }
   
   return (
     <div className="App">
+      <label class="instrument-label">DRUM MACHINE</label>
       <div id="drum-machine">
         <div tabIndex={0} className='drum-controls' onKeyDown={handleKey}>
           <PlayButton handleClick={handleClick} name="Heater 1" audioRef={heater1} letter={"q"} />
