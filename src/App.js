@@ -34,18 +34,6 @@ function App() {
 
   const handleKey = (event) => {
     if (/q|w|e|a|s|d|z|x|c/.test(event.key)) {
-      let sound = event.key === "q" ? heater1
-      : event.key === "w" ? heater2
-      : event.key === "e" ? heater3
-      : event.key === "a" ? heater4
-      : event.key === "s" ? clap
-      : event.key === "d" ? openHH
-      : event.key === "z" ? kicknHat
-      : event.key === "x" ? kick
-      : closedHH;
-
-      const audio = new Audio(sound)
-      audio.play();
 
       setSound(buttons[event.key]);
 
@@ -60,8 +48,8 @@ function App() {
     <div className="App">
       <label class="instrument-label">DRUM MACHINE</label>
       <div id="drum-machine">
-        <div tabIndex={0} className='drum-controls' onKeyDown={handleKey}>
-          <PlayButton handleClick={handleClick} name="Heater 1" audioRef={heater1} letter={"q"} />
+        <div tabIndex={0} className='drum-controls' onKeyDown={handleKey} autoFocus>
+          <PlayButton handleClick={handleClick} handleKey={handleKey} name="Heater 1" audioRef={heater1} letter={"q"} />
           <PlayButton handleClick={handleClick} name="Heater 2" audioRef={heater2} letter={"w"} />
           <PlayButton handleClick={handleClick} name="Heater 3" audioRef={heater3} letter={"e"} />
           <PlayButton handleClick={handleClick} name="Heater 4" audioRef={heater4} letter={"a"} />
